@@ -36,17 +36,37 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](images/part3/part3-test-function.png)
 
-5. Modifique la coleción de POSTMAN con NEWMAN de tal forma que pueda enviar 10 peticiones concurrentes. Verifique los resultados y presente un informe.
+5. Modifique la coleción de POSTMAN con NEWMAN de tal forma que pueda enviar 10 peticiones concurrentes. Verifique los resultados y presente un informe. \
+   **Comando:** newman run Test.postman_collection.json -n 10 \
+   ![image](https://github.com/Tianrojas/Lab10-ARSW_LOAD-BALANCING_AZURE_II/assets/62759668/86a6d460-6058-4da2-8576-aff9b4a5e6a4) 
 
-6. Cree una nueva Function que resuleva el problema de Fibonacci pero esta vez utilice un enfoque recursivo con memoization. Pruebe la función varias veces, después no haga nada por al menos 5 minutos. Pruebe la función de nuevo con los valores anteriores. ¿Cuál es el comportamiento?.
+7. Cree una nueva Function que resuleva el problema de Fibonacci pero esta vez utilice un enfoque recursivo con memoization. Pruebe la función varias veces, después no haga nada por al menos 5 minutos. Pruebe la función de nuevo con los valores anteriores. ¿Cuál es el comportamiento?. \
+   ![image](https://github.com/Tianrojas/Lab10-ARSW_LOAD-BALANCING_AZURE_II/assets/62759668/ba4f3eab-3412-40c1-ac6e-c7c42da6ff5b)
 
 **Preguntas**
 
-* ¿Qué es un Azure Function?
-* ¿Qué es serverless?
-* ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?
-* ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
-* ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
-* ¿Por qué la memoization falla o no funciona de forma correcta?
-* ¿Cómo funciona el sistema de facturación de las Function App?
+1. **¿Qué es un Azure Function?**
+   Un Azure Function es un servicio de cómputo sin servidor en Microsoft Azure que permite ejecutar código en respuesta a eventos sin necesidad de aprovisionar o administrar servidores de manera explícita. Permite la ejecución de funciones individuales de forma escalable y automática.
+
+2. **¿Qué es serverless?**
+   Serverless es un modelo de computación en la nube donde el proveedor de servicios gestiona automáticamente la infraestructura, permitiendo a los desarrolladores centrarse en escribir código y crear aplicaciones sin preocuparse por la administración de servidores subyacentes.
+
+3. **¿Qué es el runtime y qué implica seleccionarlo al momento de crear el Function App?**
+   El runtime es el entorno de ejecución donde se ejecutarán las funciones. Al seleccionar el runtime al crear un Function App, se elige el lenguaje de programación y las bibliotecas compatibles. Esto afecta la forma en que se desarrollan las funciones y qué características específicas del lenguaje están disponibles.
+
+4. **¿Por qué es necesario crear un Storage Account de la mano de un Function App?**
+   Un Storage Account es necesario para almacenar la configuración, registros y otros datos utilizados por el Function App. Además, se utiliza para almacenar información de estado, especialmente en situaciones donde las funciones se escalan horizontalmente, permitiendo compartir datos entre instancias de funciones.
+
+5. **¿Cuáles son los tipos de planes para un Function App? ¿En qué se diferencian? Mencione ventajas y desventajas de cada uno de ellos.**
+   Hay tres tipos de planes para un Function App: Consumption Plan, Premium Plan y Dedicated (App Service) Plan.
+   - **Consumption Plan:** Se factura según el consumo de recursos y es adecuado para cargas de trabajo intermitentes y ligeras. Escala automáticamente según la demanda.
+   - **Premium Plan:** Ofrece ventajas como ejecución más rápida y escalado automático, pero se paga una tarifa fija por la capacidad reservada.
+   - **Dedicated (App Service) Plan:** Proporciona control total sobre el entorno, pero requiere la gestión manual del escalado y tiene un costo fijo asociado.
+
+6. **¿Por qué la memoization falla o no funciona de forma correcta?**
+   La memoization puede fallar si la función depende de datos mutables o si la entrada de la función no cumple con los requisitos de inmutabilidad. También puede haber problemas si no se gestiona adecuadamente la expiración de la memoria caché.
+
+7. **¿Cómo funciona el sistema de facturación de las Function App?**
+   El sistema de facturación de las Function App se basa en el consumo de recursos, como el tiempo de CPU y el consumo de memoria, así como en el número de ejecuciones. En el plan de Consumo, solo se paga por los recursos utilizados durante la ejecución de las funciones, lo que hace que sea un modelo rentable para cargas de trabajo variables y ligeras. En otros planes, se paga una tarifa fija, independientemente del consumo exacto.
+
 * Informe
